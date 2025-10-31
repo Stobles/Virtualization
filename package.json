@@ -1,5 +1,5 @@
 {
-  "name": "@stoble/virtualization",
+  "name": "stoble-virtualization",
   "private": false,
   "version": "1.0.0",
   "type": "module",
