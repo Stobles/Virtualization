@@ -1,22 +1,31 @@
 {
-  "name": "virtualization",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@stoble/virtualization",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build:bundle": "vite build",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build": "npm run build:bundle && npm run build:types",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "npm run build"
   },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.16",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.16"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@faker-js/faker": "^10.1.0",
+    "@tailwindcss/vite": "^4.1.16",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
@@ -25,8 +34,12 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "tailwindcss": "^4.1.16",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@stoble/virtualization": "file:stoble-virtualization-1.0.0.tgz"
   }
 }
